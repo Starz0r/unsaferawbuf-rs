@@ -1,0 +1,15 @@
+[package]
+name = "unsaferawbuf"
+version = "0.1.0"
+edition = "2021"
+authors = ["Starz0r"]
+license = "zlib"
+readme = "README.md"
+description = "Convenient interface to a portion of manually allocated memory."
+documentation = "https://docs.rs/unsaferawbuf/latest"
+repository = "https://github.com/Starz0r/unsaferawbuf-rs"
+keywords = ["ffi", "memory", "io"]
+categories = ["os"]
+
+[dev-dependencies]
+libc = "0.2.135"
