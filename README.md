@@ -2,7 +2,7 @@
 
 [![GitHub](https://img.shields.io/github/license/Starz0r/unsaferawbuf-rs?style=flat-square)](https://github.com/Starz0r/unsaferawbuf-rs) [![crates.io badge](https://shields.io/crates/v/unsaferawbuf?style=flat-square)](https://crates.io/unsaferawbuf) [![Docs.rs](https://img.shields.io/docsrs/unsaferawbuf/latest?style=flat-square)](https://docs.rs/unsaferawbuf/latest) ![rustc requirements](https://img.shields.io/badge/rust-1.49+-brightgreen.svg?logo=rust&style=flat-square)
 
-`unsaferawbuf` provides a interface to a raw chunk of allocated memory. Intended for usage with libraries or applications that can typically only communicate over via a shared memory region. Thus, making it very unsafe, and the crate it's self, provides very little safety guarantees. This simply acts as a container around a raw memory address, and does pointer arithmetic around it when reading and writing data to it. Allowing for some additional convince when transacting from an arbitrary memory address is unavoidable.
+`unsaferawbuf` provides a interface to a raw chunk of allocated memory. Intended for usage with libraries or applications that can typically only communicate over via a shared memory region. Thus, making it very unsafe, and the crate it's self, provides very little safety guarantees. This simply acts as a container around a raw memory address, and does pointer arithmetic around it when reading and writing data to it. Allowing for some additional convenience when transacting from an arbitrary memory address is unavoidable.
 
 # Usage
 
