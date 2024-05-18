@@ -13,14 +13,12 @@ mod private {
 }
 
 pub(crate) trait UnsafeRawBufReader: private::Sealed {
-	#[doc(hidden)]
 	unsafe fn read<T>(&mut self) -> T
 	where
 		T: Copy; // TODO: eliminate this if possible
 }
 
 pub(crate) trait UnsafeRawBufWriter: private::Sealed {
-	#[doc(hidden)]
 	unsafe fn write<T>(&mut self, val: T);
 }
 
