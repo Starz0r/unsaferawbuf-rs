@@ -12,13 +12,13 @@ mod private {
 	impl Sealed for UnsafeRawBuf {}
 }
 
-pub(crate) trait UnsafeRawBufReader: private::Sealed {
+pub trait UnsafeRawBufReader: private::Sealed {
 	unsafe fn read<T>(&mut self) -> T
 	where
 		T: Copy; // TODO: eliminate this if possible
 }
 
-pub(crate) trait UnsafeRawBufWriter: private::Sealed {
+pub trait UnsafeRawBufWriter: private::Sealed {
 	unsafe fn write<T>(&mut self, val: T);
 }
 
