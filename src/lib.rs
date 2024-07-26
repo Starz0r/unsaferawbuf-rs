@@ -1,27 +1,25 @@
 use std::mem::size_of;
 
+use sealed::sealed;
+
 pub struct UnsafeRawBuf {
     pub cursor: *mut isize,
     start: *mut isize,
 }
 
-mod private {
-	pub trait Sealed {}
-	
-	use crate::UnsafeRawBuf;
-	impl Sealed for UnsafeRawBuf {}
-}
-
-pub trait UnsafeRawBufReader: private::Sealed {
+#[sealed]
+pub trait UnsafeRawBufReader {
 	unsafe fn read<T>(&mut self) -> T
 	where
 		T: Copy; // TODO: eliminate this if possible
 }
 
-pub trait UnsafeRawBufWriter: private::Sealed {
+#[sealed]
+pub trait UnsafeRawBufWriter {
 	unsafe fn write<T>(&mut self, val: T);
 }
 
+#[sealed]
 impl UnsafeRawBufReader for UnsafeRawBuf {
     unsafe fn read<T>(&mut self) -> T
     where
@@ -37,6 +35,7 @@ impl UnsafeRawBufReader for UnsafeRawBuf {
     }
 }
 
+#[sealed]
 impl UnsafeRawBufWriter for UnsafeRawBuf {
     unsafe fn write<T>(&mut self, val: T) {
         // generically reinterpret_cast and write to that pointer
